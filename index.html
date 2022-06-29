@@ -9,6 +9,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="header">
+        <p>Library Time</p>
+    </div>
+    <div class="content">
+        <div class="add-book">
+            <button class="add">Add Book</button>
+        </div>
+        <div class="card">
+            <p class="title">Title</p>
+            <p class="author">Author</p>
+            <p class="pages">1000000000</p>
+            <button class="read">Read/Not</button>
+            <button class="remove">Remove</button>
+        </div>   
+    </div>
+    <form>
+        <p>Enter the Book information below</p>
+        <label>Title</label>
+        <input type="text" class="new title" required>
+
+        <label>Author</label>
+        <input type="text" class="new author" required>
+
+        <label>Pages</label>
+        <input type="number" class="new pages" required>
+        <div class="readit">
+            <label>Read it?</label>
+            <input type="checkbox" class="new read">
+        </div>
+        <button class="submit">Submit</button>
+    </form>
 </body>
 </html>

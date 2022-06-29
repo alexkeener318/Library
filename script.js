@@ -1,3 +1,6 @@
+let myLibrary = [];
+
+
 function Book(title, author, numPages, read) {
     this.title = title;
     this.author = author;
@@ -14,5 +17,9 @@ function Book(title, author, numPages, read) {
     }
 }
 
-let book1 = new Book("12 karrot toothache","post malone", 200, true);
-console.log(book1.info());
+function addBookToLibrary(book) {
+    myLibrary.push(book);
+}
+
+// let book1 = new Book("12 karrot toothache","post malone", 200, true);
+// console.log(book1.info());

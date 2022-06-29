@@ -1,0 +1,149 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    /* border: 1px solid red; */
+}
+
+body {
+    background-color: #0f172a;
+    position: relative;
+}
+
+.header {
+    margin: 0px;
+    background-color: #334155;
+    height: 10%;
+    width: auto;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+}
+
+.content {
+    background-color: #0f172a;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    /* grid-template-rows: 1fr 1fr; */
+    gap: 50px;
+    padding: 32px;
+}
+
+.card {
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 4px 5px rgba(38, 38, 38, 0.6);
+}
+
+.card p {
+    margin: 8px;
+    border: 1px solid gray;
+    width: 140px;
+    text-align: center;
+    padding: 8px 0px;
+    background-color: #b5b9b9;
+    font-size: 18px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.card .read {
+    background-color: #059669 !important;
+    margin: 8px;
+    border: 1px solid gray;
+    width: 140px;
+    text-align: center;
+    padding: 8px 0px;
+    font-size: 18px;
+}
+
+.remove {
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #334155;
+    color: white;
+    font-weight: bold;
+}
+
+.add-book {
+    grid-column: 1 / 6;
+    justify-self: center;
+}
+
+.add {
+    padding: 32px 16px;
+    border-radius: 12px;
+    background-color: #b5b9b9;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+form {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    background-color: white;
+    height: 450px;
+    width: 400px;
+    justify-content: center;
+    margin: 100px;
+    font-size: 24px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+form p {
+    text-align: center;
+    margin-bottom: 32px;
+    margin-top: 0px;
+}
+
+label{
+    margin: 8px 16px;
+    font-weight: bold;
+}
+
+input {
+    font-size: 20px;
+    margin: 0px 16px 4px;
+    border: none;
+    padding: 6px;
+    border-radius: 12px;
+    background-color: #b5b9b9;
+    color: rgb(72, 72, 72);
+}
+
+.readit {
+    margin: 16px 0px;
+}
+
+.submit {
+    width: 60%;
+    margin-left: 20%;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #334155;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    filter: brightness(85%);
+}
