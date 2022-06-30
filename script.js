@@ -7,7 +7,7 @@ const submit = document.querySelector(".submit");
 const form = document.querySelector("form");
 const cards = document.querySelector(".content");
 const cancel = document.querySelector(".cancel");
-console.dir(addNewBook);
+let removeButton = [];
 
 // Prevents form from refreshing page
 function handleForm(event) { event.preventDefault(); } 
@@ -19,10 +19,6 @@ addButton.addEventListener("click", () => {
     if(window.getComputedStyle(addNewBook).visibility === "hidden"){
         addNewBook.style = "visibility: visible;";
         blur.style = "visibility: visible;";
-    }
-    else{
-        addNewBook.style = "visibility: hidden;";
-        blur.style = "visibility: hidden;";
     }
 });
 
@@ -61,6 +57,7 @@ function createBook(){
     }
     const submittedBook = new Book(form[0].value, form[1].value, form[2].value, form[3].checked);
     addBookToLibrary(submittedBook);
+    let index = myLibrary.length - 1;
 
     //creates new DOM element for book
     const newBook = document.createElement("div");
@@ -91,13 +88,21 @@ function createBook(){
     newBook.appendChild(pages);
     newBook.appendChild(read);
     newBook.appendChild(remove);
-
+    
     newBook.classList.add("card");
+    newBook.setAttribute('id',index);
     cards.appendChild(newBook);
+    
 
     addNewBook.style = "visibility: hidden;";
     blur.style = "visibility: hidden;";
     clear(newBook);
+
+    removeButton.push(newBook.lastChild);
+    newBook.lastChild.addEventListener("click",() => {
+        newBook.remove();
+        myLibrary.splice(newBook.id,1);
+    });
 }
 
 function verifyValidity(){
@@ -118,5 +123,10 @@ function clear() {
     form[3].checked = false;
 }
 
-// let book1 = new Book("12 karrot toothache","post malone", 200, true);
-// console.log(book1.info());
+function updateIds() {
+    // Updates DOM Ids
+    let children = cards.children;
+    for(let i = 0; i < children.length; i++){
+        children[i].setAttribute("id",i);
+    }
+}
