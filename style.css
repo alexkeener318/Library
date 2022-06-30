@@ -135,14 +135,22 @@ input {
     margin: 16px 0px;
 }
 
-.submit {
-    width: 60%;
-    margin-left: 20%;
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.submit, .cancel {
+    width: 30%;
     padding: 12px;
     border-radius: 12px;
     background-color: #334155;
     color: white;
     font-weight: bold;
+}
+
+.cancel {
+    background-color: red;
 }
 
 button:hover {

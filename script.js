@@ -11,6 +11,7 @@ const addButton = document.querySelector(".add");
 const submit = document.querySelector(".submit");
 const form = document.querySelector("form");
 const cards = document.querySelector(".content");
+const cancel = document.querySelector(".cancel");
 console.dir(addNewBook);
 
 // Prevents form from refreshing page
@@ -26,6 +27,11 @@ addButton.addEventListener("click", () => {
     else{
         addNewBook.style = "visibility: hidden;";
     }
+});
+
+cancel.addEventListener("click", () => {
+    form.style = "visibility: hidden;";
+    clear(form);
 });
 
 submit.addEventListener("click", createBook);
@@ -92,6 +98,7 @@ function createBook(){
     cards.appendChild(newBook);
 
     addNewBook.style = "visibility: hidden;";
+    clear(newBook);
 }
 
 function verifyValidity(){
@@ -102,6 +109,14 @@ function verifyValidity(){
         }
     }
     return true;
+}
+
+function clear() {
+    console.dir(form);
+    for(let i = 0; i < 3; i++){
+        form[i].value = ""
+    }
+    form[3].checked = false;
 }
 
 // let book1 = new Book("12 karrot toothache","post malone", 200, true);
