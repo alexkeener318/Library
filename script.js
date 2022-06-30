@@ -52,6 +52,9 @@ function addBookToLibrary(book) {
 }
 
 function createBook(){
+    if(!verifyValidity()){
+        return;
+    }
     const submittedBook = new Book(form[0].value, form[1].value, form[2].value, form[3].checked);
     addBookToLibrary(submittedBook);
 
@@ -87,6 +90,18 @@ function createBook(){
 
     newBook.classList.add("card");
     cards.appendChild(newBook);
+
+    addNewBook.style = "visibility: hidden;";
+}
+
+function verifyValidity(){
+    for(let i = 0; i < 3; i++){
+        console.log("Input: ");
+        if(form[i].value === ""){
+            return false
+        }
+    }
+    return true;
 }
 
 // let book1 = new Book("12 karrot toothache","post malone", 200, true);
