@@ -66,6 +66,10 @@ body {
     font-size: 18px;
 }
 
+.read.not {
+    background-color: red !important;
+}
+
 .remove {
     padding: 12px;
     border-radius: 12px;
