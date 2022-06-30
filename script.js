@@ -1,5 +1,11 @@
 let myLibrary = [];
-let test;
+
+/* TODO: FIX SUBMIT BUTTOn
+            - Verify validity of fields before submission
+            - Hide form upon submission
+
+        ADD REST OF FUNCTIONALITY
+*/
 const addNewBook = document.getElementById("form");
 const addButton = document.querySelector(".add");
 const submit = document.querySelector(".submit");

@@ -23,9 +23,9 @@ body {
 
 .content {
     background-color: #0f172a;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
-    /* grid-template-rows: 1fr 1fr; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: 50px;
     padding: 32px;
 }
@@ -58,7 +58,6 @@ body {
 
 .card .read {
     background-color: #059669 !important;
-    margin: 8px;
     border: 1px solid gray;
     width: 140px;
     text-align: center;
@@ -79,7 +78,8 @@ body {
 }
 
 .add-book {
-    grid-column: 1 / 6;
+    margin-top: 16px;
+    text-align: center;
     justify-self: center;
 }
 
