@@ -1,11 +1,6 @@
 let myLibrary = [];
 
-/* TODO: FIX SUBMIT BUTTOn
-            - Verify validity of fields before submission
-            - Hide form upon submission
-
-        ADD REST OF FUNCTIONALITY
-*/
+const blur = document.querySelector(".blur");
 const addNewBook = document.getElementById("form");
 const addButton = document.querySelector(".add");
 const submit = document.querySelector(".submit");
@@ -23,14 +18,17 @@ form.addEventListener('submit', handleForm);
 addButton.addEventListener("click", () => {
     if(window.getComputedStyle(addNewBook).visibility === "hidden"){
         addNewBook.style = "visibility: visible;";
+        blur.style = "visibility: visible;";
     }
     else{
         addNewBook.style = "visibility: hidden;";
+        blur.style = "visibility: hidden;";
     }
 });
 
 cancel.addEventListener("click", () => {
     form.style = "visibility: hidden;";
+    blur.style = "visibility: hidden;";
     clear(form);
 });
 
@@ -98,6 +96,7 @@ function createBook(){
     cards.appendChild(newBook);
 
     addNewBook.style = "visibility: hidden;";
+    blur.style = "visibility: hidden;";
     clear(newBook);
 }
 
