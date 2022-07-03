@@ -31,12 +31,15 @@ cancel.addEventListener("click", () => {
 submit.addEventListener("click", createBook);
 
 
-function Book(title, author, numPages, read) {
-    this.title = title;
-    this.author = author;
-    this.numPages = numPages;
-    this.read = read;
-    this.info = function() {
+class Book {
+    constructor(title, author, numPages, read){
+        this.title = title;
+        this.author = author;
+        this.numPages = numPages;
+        this.read = read;
+    }
+
+    info() {
         let output = title + " by " + author + ", " + numPages + " pages, ";
         if(read){
             output += "has read it."
@@ -46,6 +49,22 @@ function Book(title, author, numPages, read) {
         return output;
     }
 }
+
+// function Book(title, author, numPages, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.numPages = numPages;
+//     this.read = read;
+//     this.info = function() {
+//         let output = title + " by " + author + ", " + numPages + " pages, ";
+//         if(read){
+//             output += "has read it."
+//         }else{
+//             output += "had not read."
+//         }
+//         return output;
+//     }
+// }
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
