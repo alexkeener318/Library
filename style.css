@@ -35,6 +35,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 32px;
+    gap:32px;
 }
 
 .card {
